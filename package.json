@@ -14,7 +14,7 @@
     "Sliding panel for ios",
     "Sliding panel for android and ios"
   ],
-  "name": "react-native-sliding-panels",
+  "name": "react-native-sliding-side-panel",
   "private": false,
   "version": "1.0.0",
   "main": "index.js",
