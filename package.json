@@ -23,12 +23,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aminerol/react-native-sliding-panels.git"
+    "url": "git+https://github.com/Jatael/react-native-sliding-side-panel.git"
   },
-  "author": "Amine Bl <zazamine8@gmail.com>",
+  "author": "Jules Talbot <jules.talbot-pralet@epitech.eu>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aminerol/react-native-sliding-panels/issues"
+    "url": "https://github.com/Jatael/react-native-sliding-side-panel/issues"
   },
-  "homepage": "https://github.com/aminerol/react-native-sliding-panels#readme"
+  "homepage": "https://github.com/Jatael/react-native-sliding-side-panel#readme"
 }

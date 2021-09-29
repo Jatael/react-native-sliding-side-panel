@@ -3,8 +3,6 @@ An Awesome fully Customizable library of react native for sliding panels purely 
 
 This repo is Forked from the react-native-sliding-up-down-panels and add ability to slide from right or the left
 
-![Alt text](Example/screenshots/slidingpanelios.gif)
-
 # Features (What makes this library different)
 
 > #### *Easily Assemble itself into your react native project*
@@ -17,7 +15,7 @@ This repo is Forked from the react-native-sliding-up-down-panels and add ability
 # Installation
 
 ```
-npm install react-native-sliding-panels --save
+npm install react-native-sliding-side-panel --save
 ```
 
 Copy and paste into the terminal in your project directory. For more information on npm install, please visit their [official page](https://docs.npmjs.com/getting-started/installing-npm-packages-locally)
@@ -41,7 +39,7 @@ import {
 } from 'react-native';
 const { width, height } = Dimensions.get('window');
 
-import SlidingPanel from 'react-native-sliding-panels';
+import SlidingPanel from react-native-sliding-side-panel';
 
 
 export default class App extends Component {
