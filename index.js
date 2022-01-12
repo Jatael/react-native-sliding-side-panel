@@ -38,7 +38,7 @@ function slidingPanelViewPositionStyle(panelPosition, headerPanelHeight, headerP
     style = {bottom: headerPanelHeight, left: 0, position: 'absolute'}
   }
   if(panelPosition === 'right') {
-    style = {left: headerPanelWidth, top: 0, position: 'absolute'}
+    style = {left: headerPanelWidth, top: 72, position: 'absolute'}
   }
   if(panelPosition === 'left') {
     style = {right: headerPanelWidth, top: 0, position: 'absolute'}
@@ -64,9 +64,9 @@ const SlidingPanelView = (props) => (
 const SlidingPanelIOS = (props) => (
   <Animated.View style={headerViewPanelPositionStyle(props.panelPosition, props.heightAnim, props.widthtAnim)}>
     <Animated.View
-      {...props.panResponder} 
-      style={ props.headerPanelHeight ? {height: props.headerPanelHeight} : {width: props.headerPanelWidth}} 
-    >   
+      {...props.panResponder}
+      style={ props.headerPanelHeight ? {height: props.headerPanelHeight, top: 82} : {width: props.headerPanelWidth}}
+    >
       {props.headerView()}
     </Animated.View>
     <View style={slidingPanelViewPositionStyle(props.panelPosition, props.headerPanelHeight, props.headerPanelWidth)}>
@@ -78,9 +78,9 @@ const SlidingPanelIOS = (props) => (
 const SlidingPanelAndroid = (props) => (
     <Animated.View style={headerViewPanelPositionStyle(props.panelPosition, props.heightAnim, props.widthtAnim)}>
     <Animated.View
-      {...props.panResponder} 
+      {...props.panResponder}
       style={ props.headerPanelHeight ? {height: props.headerPanelHeight} : {width: props.headerPanelWidth}}
-    >   
+    >
       {props.headerView()}
     </Animated.View>
     <Animated.View style={slidingPanelViewPositionStyle(props.panelPosition, props.headerPanelHeight, props.headerPanelWidth)}>
@@ -142,18 +142,18 @@ export default class SlidingPanel extends Component {
               else
                 check = sliderPosition + a < width - (this.props.headerLayoutWidth + 25)
             }
-            
+
           }else{
             if(this.props.slidingPanelLayoutHeight) {
               if(this.props.slidingPanelLayoutHeight)
                 check = sliderPosition + a < this.props.slidingPanelLayoutHeight
               else
-                check =  sliderPosition + a <  height - (this.props.headerLayoutHeight -2)   
+                check =  sliderPosition + a <  height - (this.props.headerLayoutHeight -2)
             } else {
               if(this.props.slidingPanelLayoutWidth)
                 check = sliderPosition + a < this.props.slidingPanelLayoutWidth
               else
-                check =  sliderPosition + a <  width - (this.props.headerLayoutWidth -2)  
+                check =  sliderPosition + a <  width - (this.props.headerLayoutWidth -2)
             }
           }
 
@@ -169,7 +169,7 @@ export default class SlidingPanel extends Component {
                 this.state.widthtAnim.setValue(a)
               else
                 this.state.heightAnim.setValue(a)
-              
+
             }
           }
         }
@@ -179,7 +179,7 @@ export default class SlidingPanel extends Component {
         if(a !== 0) {
           this.props.onDragStop(e, gesture)
         }
-        
+
         if(this.props.allowAnimation) {
           let gestureVelocity = {}
           if(this.props.panelPosition === 'bottom')
@@ -238,7 +238,7 @@ export default class SlidingPanel extends Component {
                     toValue: 0,
                     duration: this.props.AnimationSpeed,
                   }
-                ).start(() => this.props.onAnimationStop()); 
+                ).start(() => this.props.onAnimationStop());
               }else{
                 Animated.timing(
                   this.state.widthtAnim,
@@ -246,7 +246,7 @@ export default class SlidingPanel extends Component {
                     toValue: 0,
                     duration: this.props.AnimationSpeed,
                   }
-                ).start(() => this.props.onAnimationStop()); 
+                ).start(() => this.props.onAnimationStop());
               }
             }
           }
